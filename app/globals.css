@@ -1,0 +1,185 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #060713;
+  --foreground: #e2f1ff;
+  
+  --cyber-cyan: #00f0ff;
+  --cyber-pink: #ff007f;
+  --cyber-purple: #9d4edd;
+  --cyber-yellow: #ffe600;
+  --cyber-green: #00ff66;
+  --cyber-dark: #090a16;
+  --cyber-card: rgba(13, 16, 38, 0.75);
+  --cyber-border: rgba(0, 240, 255, 0.25);
+  --cyber-glow-cyan: 0 0 15px rgba(0, 240, 255, 0.4);
+  --cyber-glow-pink: 0 0 15px rgba(255, 0, 127, 0.4);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Custom Cyberpunk Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060713;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--cyber-cyan), var(--cyber-pink));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyber-cyan);
+  box-shadow: 0 0 10px var(--cyber-cyan);
+}
+
+/* Cyber Grid background effect */
+.cyber-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Cyber CRT Scanlines */
+.scanlines {
+  position: relative;
+}
+.scanlines::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+/* HUD corner bracket decoration */
+.hud-box {
+  position: relative;
+  background: var(--cyber-card);
+  border: 1px solid var(--cyber-border);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hud-box::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px;
+  width: 12px; height: 12px;
+  border-top: 2px solid var(--cyber-cyan);
+  border-left: 2px solid var(--cyber-cyan);
+  transition: all 0.3s ease;
+}
+
+.hud-box::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; right: -2px;
+  width: 12px; height: 12px;
+  border-bottom: 2px solid var(--cyber-pink);
+  border-right: 2px solid var(--cyber-pink);
+  transition: all 0.3s ease;
+}
+
+.hud-box:hover {
+  border-color: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.2);
+}
+
+.hud-box:hover::before {
+  width: 20px;
+  height: 20px;
+  border-color: #00f0ff;
+  box-shadow: 0 0 8px #00f0ff;
+}
+
+.hud-box:hover::after {
+  width: 20px;
+  height: 20px;
+  border-color: #ff007f;
+  box-shadow: 0 0 8px #ff007f;
+}
+
+/* Cyber Glow Text & Button Utilities */
+.neon-text-cyan {
+  color: #00f0ff;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6), 0 0 20px rgba(0, 240, 255, 0.3);
+}
+
+.neon-text-pink {
+  color: #ff007f;
+  text-shadow: 0 0 8px rgba(255, 0, 127, 0.6), 0 0 20px rgba(255, 0, 127, 0.3);
+}
+
+.neon-text-purple {
+  color: #c084fc;
+  text-shadow: 0 0 8px rgba(192, 132, 252, 0.6);
+}
+
+.neon-btn-cyan {
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.neon-btn-cyan:hover {
+  background: #00f0ff;
+  color: #060713;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
+}
+
+.neon-btn-pink {
+  background: rgba(255, 0, 127, 0.1);
+  border: 1px solid #ff007f;
+  color: #ff007f;
+  box-shadow: 0 0 10px rgba(255, 0, 127, 0.2);
+  transition: all 0.3s ease;
+}
+
+.neon-btn-pink:hover {
+  background: #ff007f;
+  color: #ffffff;
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.7);
+}
+
+/* Glitch Animation Effect */
+@keyframes glitch {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+/* Hologram shimmer effect */
+@keyframes hologram {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.hologram-pulse {
+  animation: hologram 3s infinite ease-in-out;
+}
