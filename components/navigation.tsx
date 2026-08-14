@@ -2,19 +2,17 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ExternalLink, Zap } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import CyberSound from "@/components/cyber-sound"
 
 interface NavigationProps {
   activeSection: string
   setActiveSection: (section: string) => void
-  onOpenVercelModal?: () => void
 }
 
 export default function Navigation({
   activeSection,
   setActiveSection,
-  onOpenVercelModal,
 }: NavigationProps) {
   const [isOpen, setIsOpen] = useState(false)
   const navItems = ["About", "Skills", "Projects", "Experience", "Education", "Contact"]
@@ -85,22 +83,9 @@ export default function Navigation({
           })}
         </div>
 
-        {/* Right Tools & Deploy Launcher */}
+        {/* Right Tools - Ambient Cyber Audio Toggle */}
         <div className="flex items-center gap-3">
-          {/* Cyber Audio Ambient Toggle */}
           <CyberSound />
-
-          {/* Vercel Link Button */}
-          {onOpenVercelModal && (
-            <button
-              onClick={onOpenVercelModal}
-              className="hud-box px-3 py-1.5 rounded text-xs font-mono font-semibold text-white border border-[#ff007f]/50 hover:border-[#ff007f] bg-[#ff007f]/10 hover:bg-[#ff007f] hover:text-white transition-all duration-300 flex items-center gap-1.5 shadow-[0_0_12px_rgba(255,0,127,0.3)]"
-            >
-              <Zap size={14} className="text-[#ff007f] group-hover:text-white animate-pulse" />
-              <span className="hidden sm:inline">VERCEL LINK</span>
-              <ExternalLink size={12} />
-            </button>
-          )}
 
           {/* Mobile Menu Button */}
           <button

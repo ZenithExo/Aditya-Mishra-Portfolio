@@ -3,13 +3,9 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { Mail, Phone, Linkedin, Github, Send, Copy, Check, Terminal, ExternalLink, Zap } from "lucide-react"
+import { Mail, Phone, Linkedin, Github, Send, Copy, Check, Terminal, ExternalLink } from "lucide-react"
 
-interface ContactProps {
-  onOpenVercelModal?: () => void
-}
-
-export default function Contact({ onOpenVercelModal }: ContactProps) {
+export default function Contact() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
 
   const [copiedText, setCopiedText] = useState<string | null>(null)
@@ -107,7 +103,7 @@ export default function Contact({ onOpenVercelModal }: ContactProps) {
                       </span>
                       <button
                         onClick={() => copyToClipboard(method.value, method.label)}
-                        className="hover:text-white flex items-center gap-1 transition-colors"
+                        className="hover:text-white flex items-center gap-1 transition-colors cursor-pointer"
                       >
                         {copiedText === method.label ? (
                           <span className="text-green-400 font-bold flex items-center gap-1">
@@ -222,7 +218,7 @@ export default function Contact({ onOpenVercelModal }: ContactProps) {
 
                   <button
                     type="submit"
-                    className="neon-btn-pink w-full py-3.5 rounded-lg font-bold flex items-center justify-center gap-2 uppercase tracking-wider text-sm"
+                    className="neon-btn-pink w-full py-3.5 rounded-lg font-bold flex items-center justify-center gap-2 uppercase tracking-wider text-sm cursor-pointer"
                   >
                     <Send size={16} />
                     TRANSMIT MESSAGE
@@ -233,33 +229,11 @@ export default function Contact({ onOpenVercelModal }: ContactProps) {
           </motion.div>
         </div>
 
-        {/* Footer Banner with Vercel Deployment Action */}
-        <div className="hud-box p-6 sm:p-8 rounded-xl bg-gradient-to-r from-[#00f0ff]/10 via-[#060713] to-[#ff007f]/10 border border-gray-800 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <div className="text-white font-mono font-bold text-lg flex items-center gap-2">
-              <Zap className="text-[#ffe600]" size={20} /> VERCEL DEPLOYMENT LINK & DASHBOARD
-            </div>
-            <p className="text-xs text-gray-400 font-sans mt-1">
-              Want to host or update this cyberpunk portfolio live on Vercel? Open the Vercel Link modal for 1-click deployment.
-            </p>
-          </div>
-
-          {onOpenVercelModal && (
-            <button
-              onClick={onOpenVercelModal}
-              className="neon-btn-cyan px-6 py-3 rounded-lg font-mono text-xs font-bold shrink-0 flex items-center gap-2"
-            >
-              LAUNCH VERCEL DEPLOYMENT
-              <ExternalLink size={14} />
-            </button>
-          )}
-        </div>
-
         {/* System Copyright Footer */}
         <div className="pt-8 border-t border-gray-800 text-center font-mono text-xs text-gray-500 space-y-1">
           <p>© 2026 ADITYA KUMAR MISHRA. ALL RIGHTS RESERVED.</p>
           <p className="text-[10px] text-gray-600">
-            SYSTEM ARCHITECTURE: NEXT.JS 16 // TAILWIND CSS // FRAMER MOTION // VERCEL DEPLOY
+            SYSTEM ARCHITECTURE: NEXT.JS 16 // TAILWIND CSS // FRAMER MOTION
           </p>
         </div>
       </div>

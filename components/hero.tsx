@@ -1,15 +1,14 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowDown, Gamepad2, Sparkles, Terminal, Rocket, Code2, Cpu } from "lucide-react"
+import { ArrowDown, Gamepad2, Terminal, Rocket, Code2, Cpu } from "lucide-react"
 import Image from "next/image"
 
 interface HeroProps {
   setActiveSection: (section: string) => void
-  onOpenVercelModal?: () => void
 }
 
-export default function Hero({ setActiveSection, onOpenVercelModal }: HeroProps) {
+export default function Hero({ setActiveSection }: HeroProps) {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-4 sm:px-6 overflow-hidden cyber-grid-bg">
       {/* Glow Ambient Blobs */}
@@ -43,7 +42,7 @@ export default function Hero({ setActiveSection, onOpenVercelModal }: HeroProps)
                 アディティヤ・ミシュラ // DIGITAL PORTFOLIO 2026
               </div>
 
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-none font-sans">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#ffffff] tracking-tight leading-none font-sans">
                 HI, I'M{" "}
                 <span className="inline-block bg-gradient-to-r from-[#00f0ff] via-[#9d4edd] to-[#ff007f] bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(0,240,255,0.6)]">
                   ADITYA
@@ -95,7 +94,7 @@ export default function Hero({ setActiveSection, onOpenVercelModal }: HeroProps)
             >
               <button
                 onClick={() => setActiveSection("projects")}
-                className="neon-btn-cyan px-7 py-3.5 rounded-lg font-bold flex items-center gap-2 tracking-wider uppercase group"
+                className="neon-btn-cyan px-7 py-3.5 rounded-lg font-bold flex items-center gap-2 tracking-wider uppercase group cursor-pointer"
               >
                 <Rocket size={16} className="group-hover:translate-x-1 transition-transform" />
                 EXPLORE WORK
@@ -103,21 +102,11 @@ export default function Hero({ setActiveSection, onOpenVercelModal }: HeroProps)
 
               <button
                 onClick={() => setActiveSection("contact")}
-                className="neon-btn-pink px-7 py-3.5 rounded-lg font-bold flex items-center gap-2 tracking-wider uppercase"
+                className="neon-btn-pink px-7 py-3.5 rounded-lg font-bold flex items-center gap-2 tracking-wider uppercase cursor-pointer"
               >
                 <Terminal size={16} />
                 CONTACT SYSTEM
               </button>
-
-              {onOpenVercelModal && (
-                <button
-                  onClick={onOpenVercelModal}
-                  className="px-5 py-3.5 rounded-lg border border-[#ffe600]/40 text-[#ffe600] bg-[#ffe600]/10 hover:bg-[#ffe600] hover:text-black font-bold transition-all duration-300 flex items-center gap-2 shadow-[0_0_15px_rgba(255,230,0,0.2)]"
-                >
-                  <Sparkles size={16} className="animate-spin" />
-                  VERCEL LINK
-                </button>
-              )}
             </motion.div>
           </div>
 
@@ -215,7 +204,7 @@ export default function Hero({ setActiveSection, onOpenVercelModal }: HeroProps)
         >
           <button
             onClick={() => setActiveSection("about")}
-            className="text-[#00f0ff] hover:text-[#ff007f] transition-colors p-2"
+            className="text-[#00f0ff] hover:text-[#ff007f] transition-colors p-2 cursor-pointer"
           >
             <ArrowDown size={28} />
           </button>

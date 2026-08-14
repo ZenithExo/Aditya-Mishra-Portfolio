@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import CyberParticles from "@/components/cyber-particles"
-import VercelModal from "@/components/vercel-modal"
 import Navigation from "@/components/navigation"
 import Hero from "@/components/hero"
 import About from "@/components/about"
@@ -14,7 +13,6 @@ import Contact from "@/components/contact"
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("hero")
-  const [isVercelModalOpen, setIsVercelModalOpen] = useState(false)
 
   // Intersection observer to track active navigation section automatically on scroll
   useEffect(() => {
@@ -44,31 +42,21 @@ export default function Home() {
       {/* Background Interactive Cyber Particles Canvas */}
       <CyberParticles />
 
-      {/* Vercel Deployment Modal */}
-      <VercelModal
-        isOpen={isVercelModalOpen}
-        onClose={() => setIsVercelModalOpen(false)}
-      />
-
       {/* Cyber Header Navigation */}
       <Navigation
         activeSection={activeSection}
         setActiveSection={setActiveSection}
-        onOpenVercelModal={() => setIsVercelModalOpen(true)}
       />
 
       {/* Main Sections */}
       <main className="relative z-10">
-        <Hero
-          setActiveSection={setActiveSection}
-          onOpenVercelModal={() => setIsVercelModalOpen(true)}
-        />
+        <Hero setActiveSection={setActiveSection} />
         <About />
         <Skills />
         <Projects />
         <Experience />
         <Education />
-        <Contact onOpenVercelModal={() => setIsVercelModalOpen(true)} />
+        <Contact />
       </main>
     </div>
   )
