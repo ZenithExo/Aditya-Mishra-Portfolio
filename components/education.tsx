@@ -31,7 +31,7 @@ export default function Education() {
       title: "Web Development Certification",
       badge: "Udemy Certified",
       description: "Certified professional in Web Development (HTML, CSS, JS, responsive layout architecture).",
-      link: "https://badges.parchment.com/public/assertions/8lhwUVdqQwaQymnbUVtxZA?identity__email=hitenagar@gmail.com",
+      link: "https://www.udemy.com/certificate/UC-0388a90e-d51a-4348-bbf3-2a147062ccd9/",
       accent: "#00f0ff",
     },
     {
@@ -79,7 +79,7 @@ export default function Education() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="hud-box p-6 rounded-xl block space-y-4 hover:shadow-[0_0_25px_rgba(0,240,255,0.2)] transition-all group"
+                className="hud-box p-6 rounded-xl block space-y-4 hover:shadow-[0_0_25px_rgba(0,240,255,0.2)] transition-all group cursor-pointer"
               >
                 <div className="flex items-center justify-between">
                   <span
