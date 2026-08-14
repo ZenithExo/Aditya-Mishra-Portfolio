@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowDown, Gamepad2, Terminal, Rocket, Code2, Cpu } from "lucide-react"
+import { ArrowDown, Gamepad2, Terminal, Rocket, Compass, Layout } from "lucide-react"
 import Image from "next/image"
 
 interface HeroProps {
@@ -28,7 +28,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
             >
               <span className="w-2 h-2 rounded-full bg-[#00f0ff] animate-ping" />
               <Gamepad2 size={14} className="text-[#00f0ff]" />
-              <span>SYS.ROLE :: GAME DEVELOPER & 3D SYSTEM ARCHITECT</span>
+              <span>SYS.ROLE :: GAME DESIGNER & WORLD ARCHITECT</span>
             </motion.div>
 
             {/* Katakana Cyber Title */}
@@ -39,7 +39,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
               className="space-y-1"
             >
               <div className="text-xs font-mono tracking-[0.3em] text-[#ff007f] uppercase">
-                アディティヤ・ミシュラ // DIGITAL PORTFOLIO 2026
+                アディティヤ・ミシュラ // GAME DESIGN PORTFOLIO 2026
               </div>
 
               <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#ffffff] tracking-tight leading-none font-sans">
@@ -50,17 +50,17 @@ export default function Hero({ setActiveSection }: HeroProps) {
               </h1>
             </motion.div>
 
-            {/* Subtitle / Bio summary */}
+            {/* Subtitle / Bio summary tailored to Game Designer */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base sm:text-xl text-gray-300 font-sans leading-relaxed max-w-2xl"
             >
-              Crafting futuristic immersive worlds, AAA-grade gameplay mechanics, and high-performance real-time 3D environments powered by <span className="text-[#00f0ff] font-semibold">Unity</span> & <span className="text-[#ff007f] font-semibold">Unreal Engine</span>.
+              Designing immersive gameplay mechanics, combat pacing, level layouts, and interactive player experiences powered by <span className="text-[#00f0ff] font-semibold">Unreal Engine 5</span> & <span className="text-[#ff007f] font-semibold">Unity</span>.
             </motion.p>
 
-            {/* Cyber Skill Chips */}
+            {/* Cyber Game Designer Skill Chips */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -68,12 +68,14 @@ export default function Hero({ setActiveSection }: HeroProps) {
               className="flex flex-wrap gap-2 pt-2 font-mono text-xs"
             >
               {[
-                "Unity Engine",
+                "Level Design",
+                "Gameplay Mechanics",
                 "Unreal Engine 5",
-                "C# / C++",
-                "Gameplay Systems",
-                "Physics Sim",
+                "Unity Engine",
+                "World Building",
                 "3D & Blender",
+                "Prototyping",
+                "Combat Pacing",
               ].map((tech) => (
                 <span
                   key={tech}
@@ -97,7 +99,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
                 className="neon-btn-cyan px-7 py-3.5 rounded-lg font-bold flex items-center gap-2 tracking-wider uppercase group cursor-pointer"
               >
                 <Rocket size={16} className="group-hover:translate-x-1 transition-transform" />
-                EXPLORE WORK
+                EXPLORE DESIGNS
               </button>
 
               <button
@@ -130,7 +132,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
                 <div className="relative w-full h-full rounded-xl overflow-hidden group">
                   <Image
                     src="/profile.jpg"
-                    alt="Aditya Kumar Mishra - Cyber Game Developer"
+                    alt="Aditya Kumar Mishra - Cyber Game Designer"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                     priority
@@ -154,8 +156,8 @@ export default function Hero({ setActiveSection }: HeroProps) {
                 transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
                 className="absolute -top-4 -right-4 px-3 py-1.5 rounded-md bg-[#00f0ff] text-black font-mono font-extrabold text-xs shadow-[0_0_15px_#00f0ff] flex items-center gap-1.5"
               >
-                <Cpu size={14} />
-                AVAILABLE_FOR_HIRE
+                <Compass size={14} />
+                GAME_DESIGNER_ACTIVE
               </motion.div>
 
               {/* Floating Badge 2 - Experience Log */}
@@ -164,8 +166,8 @@ export default function Hero({ setActiveSection }: HeroProps) {
                 transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
                 className="absolute -bottom-4 -left-4 px-3 py-1.5 rounded-md bg-[#ff007f] text-white font-mono font-extrabold text-xs shadow-[0_0_15px_#ff007f] flex items-center gap-1.5"
               >
-                <Code2 size={14} />
-                EX-GAMELOFT INTERN
+                <Layout size={14} />
+                EX-GAMELOFT QA & DESIGN
               </motion.div>
             </motion.div>
           </div>
@@ -179,19 +181,19 @@ export default function Hero({ setActiveSection }: HeroProps) {
           className="mt-16 pt-8 border-t border-gray-800/80 grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-center"
         >
           <div className="hud-box p-4 rounded-lg">
-            <div className="text-xl sm:text-2xl font-bold text-[#00f0ff]">3D & GAMEPLAY</div>
-            <div className="text-[11px] text-gray-400">UNITY & UNREAL ENGINE</div>
+            <div className="text-xl sm:text-2xl font-bold text-[#00f0ff]">LEVEL DESIGN</div>
+            <div className="text-[11px] text-gray-400">UNREAL & UNITY BLOCKOUTS</div>
           </div>
           <div className="hud-box p-4 rounded-lg">
             <div className="text-xl sm:text-2xl font-bold text-[#ff007f]">GAMELOFT</div>
-            <div className="text-[11px] text-gray-400">TESTER INTERN LOG</div>
+            <div className="text-[11px] text-gray-400">LEVEL TESTING & DESIGN</div>
           </div>
           <div className="hud-box p-4 rounded-lg">
             <div className="text-xl sm:text-2xl font-bold text-[#9d4edd]">BCA GRADUATE</div>
             <div className="text-[11px] text-gray-400">CGPA 7.12 // LPU</div>
           </div>
           <div className="hud-box p-4 rounded-lg">
-            <div className="text-xl sm:text-2xl font-bold text-[#ffe600]">2+ FEATURED</div>
+            <div className="text-xl sm:text-2xl font-bold text-[#ffe600]">2+ DESIGN TITLES</div>
             <div className="text-[11px] text-gray-400">TRON & NEON-CATCHER</div>
           </div>
         </motion.div>

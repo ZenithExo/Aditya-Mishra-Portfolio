@@ -19,11 +19,11 @@ export default function About() {
         >
           <div className="flex items-center gap-2 text-xs font-mono text-[#00f0ff] uppercase tracking-widest mb-2">
             <Terminal size={14} />
-            <span>SYS.FILE // ABOUT_DEVELOPER.LOG</span>
+            <span>SYS.FILE // ABOUT_GAME_DESIGNER.LOG</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
             ABOUT <span className="neon-text-pink">ME</span>
-            <span className="text-[#00f0ff] text-2xl ml-3 font-mono">/ 私について</span>
+            <span className="text-[#00f0ff] text-2xl ml-3 font-mono">/ デザイナーについて</span>
           </h2>
         </motion.div>
 
@@ -40,22 +40,22 @@ export default function About() {
                 <span className="flex items-center gap-2">
                   <Cpu size={14} /> SYSTEM_BIOGRAPHY
                 </span>
-                <span>STATUS: ACTIVE</span>
+                <span>STATUS: ACTIVE DESIGNER</span>
               </div>
 
               <p className="text-base sm:text-lg leading-relaxed text-gray-200">
-                I am a passionate game developer from Odisha, India, with a deep computer science foundation and a relentless obsession for interactive 3D storytelling.
+                I am a passionate game designer from Odisha, India, with a strong computer science background and a relentless drive for level architecture, mechanics design, and player engagement.
               </p>
 
               <p className="text-base leading-relaxed text-gray-300">
-                Specializing in building real-time interactive games and simulated physics environments, I leverage <strong className="text-[#00f0ff]">Unity</strong> and <strong className="text-[#ff007f]">Unreal Engine</strong> to craft high-fps gameplay systems, responsive character controllers, and immersive sci-fi aesthetic worlds.
+                Specializing in designing interactive mechanics, whitebox level prototyping, physics-driven puzzles, and combat pacing in <strong className="text-[#00f0ff]">Unreal Engine 5</strong> and <strong className="text-[#ff007f]">Unity</strong>. I bring game worlds to life through intuitive gameplay flow, spatial storytelling, and playtest balancing.
               </p>
 
               {/* Specs Grid */}
               <div className="grid grid-cols-2 gap-4 pt-4 font-mono text-xs">
                 <div className="p-3 bg-black/40 rounded border border-gray-800">
                   <span className="text-gray-500 block">PRIMARY_FOCUS</span>
-                  <span className="text-[#00f0ff] font-bold">Gameplay Programming</span>
+                  <span className="text-[#00f0ff] font-bold">Level & Gameplay Design</span>
                 </div>
                 <div className="p-3 bg-black/40 rounded border border-gray-800">
                   <span className="text-gray-500 block">3D PIPELINE</span>
@@ -84,7 +84,7 @@ export default function About() {
                 </h3>
 
                 <p className="text-sm text-gray-300 leading-relaxed font-sans">
-                  A highly motivated game developer seeking an opportunity at <strong className="text-white">Insomniac Games</strong> to apply technical expertise in C++, C#, gameplay logic, physics, and creative world design. Eager to contribute to world-class AAA titles that thrill millions of players worldwide.
+                  A highly motivated game designer seeking an opportunity at <strong className="text-white">Insomniac Games</strong> to apply technical expertise in level design, combat pacing, world building, and player psychology. Eager to contribute to designing world-class AAA titles that inspire and thrill players worldwide.
                 </p>
               </div>
 
@@ -94,8 +94,8 @@ export default function About() {
                   <span className="font-bold text-white">Insomniac Games</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>ALIGNMENT:</span>
-                  <span className="text-[#ff007f] font-bold">AAA Gameplay & Systems</span>
+                  <span>TARGET_ROLE:</span>
+                  <span className="text-[#ff007f] font-bold">Game Designer / Level Designer</span>
                 </div>
                 <div className="flex justify-between">
                   <span>READY_STATUS:</span>

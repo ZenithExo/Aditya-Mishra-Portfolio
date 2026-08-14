@@ -2,27 +2,27 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { Briefcase, Calendar, MapPin, CheckCircle2, ShieldAlert } from "lucide-react"
+import { Briefcase, Calendar, MapPin, CheckCircle2 } from "lucide-react"
 
 export default function Experience() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
 
   const experiences = [
     {
-      title: "Game Tester & QA Intern",
+      title: "Game Designer & QA Intern",
       company: "Gameloft",
       period: "Dec 2022 - Sept 2025",
       location: "Hybrid / Remote",
       badge: "VERIFIED INTERNSHIP",
       description:
-        "Engineered quality assurance testing, bug discovery, and performance optimization for AAA pre-release game builds at Gameloft.",
+        "Engineered level testing, gameplay mechanics evaluation, bug discovery, and playtest balancing for AAA pre-release game builds at Gameloft.",
       responsibilities: [
+        "Evaluated level design blockouts, combat pacing, spatial flow, and player progression.",
         "Tested Unity & C++ game engines for physics glitches, frame drops, and asset collision bugs.",
-        "Built basic 3D block-outs and character test environments in Unity engine.",
-        "Managed project task workflow, sprint issues, and version control using Trello and dev logs.",
-        "Collaborated with core developers to ensure build stability prior to major title deployment.",
+        "Built 3D level blockouts and interactive test environments in Unity engine.",
+        "Managed level metrics, sprint issues, and version control using Trello and dev logs.",
       ],
-      technologies: ["Gameloft QA Pipeline", "Unity Engine", "C++", "Trello", "Bug Tracking"],
+      technologies: ["Level Design", "Unity Engine", "C++", "Gameloft QA Pipeline", "Trello"],
     },
   ]
 

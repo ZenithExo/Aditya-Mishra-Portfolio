@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { Cpu, Code, Layers, Database, Palette, Users, Sparkles } from "lucide-react"
+import { Cpu, Code, Layers, Palette, Users, Sparkles, Compass } from "lucide-react"
 
 export default function Skills() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 })
@@ -11,59 +11,59 @@ export default function Skills() {
 
   const skillCategories = [
     {
-      id: "engines",
-      title: "Game Engines & Core",
-      icon: Cpu,
+      id: "design",
+      title: "Game & Level Design",
+      icon: Compass,
       color: "#00f0ff",
-      skills: ["Unity", "Unreal Engine 5", "CryEngine", "GameMaker Studio", "Godot"],
-    },
-    {
-      id: "languages",
-      title: "Programming Languages",
-      icon: Code,
-      color: "#ff007f",
-      skills: ["C#", "C++", "JavaScript", "TypeScript", "Python"],
-    },
-    {
-      id: "art",
-      title: "3D & Art Tools",
-      icon: Palette,
-      color: "#9d4edd",
-      skills: ["Blender", "Photoshop", "Illustrator", "Maya", "Substance Painter"],
-    },
-    {
-      id: "gamedesign",
-      title: "Game Systems & Design",
-      icon: Sparkles,
-      color: "#ffe600",
       skills: [
-        "Gameplay Programming",
-        "Physics Simulation",
         "Level Design",
-        "Performance Optimization",
-        "Scripting",
+        "Gameplay Mechanics",
+        "Combat Pacing",
+        "Whitebox Prototyping",
+        "Quest & Mission Design",
+        "Playtest Balancing",
       ],
     },
     {
-      id: "web",
-      title: "Frontend & Web Tech",
-      icon: Layers,
+      id: "engines",
+      title: "Game Engines",
+      icon: Cpu,
+      color: "#ff007f",
+      skills: ["Unreal Engine 5", "Unity Engine", "CryEngine", "GameMaker Studio", "Godot"],
+    },
+    {
+      id: "art",
+      title: "3D & World Building Tools",
+      icon: Palette,
+      color: "#9d4edd",
+      skills: ["Blender", "Maya", "Substance Painter", "Photoshop", "Illustrator", "Level Art"],
+    },
+    {
+      id: "scripting",
+      title: "Scripting & Logic",
+      icon: Code,
+      color: "#ffe600",
+      skills: ["Blueprints (Unreal)", "C#", "C++", "JavaScript", "TypeScript", "Python"],
+    },
+    {
+      id: "systems",
+      title: "UX & Game Systems",
+      icon: Sparkles,
       color: "#00ff66",
-      skills: ["React.js", "Next.js", "Three.js", "Tailwind CSS", "Bootstrap"],
+      skills: [
+        "Player Psychology",
+        "Game Design Documents (GDD)",
+        "System Balancing",
+        "Game UX & Wireframing",
+        "Rapid Prototyping",
+      ],
     },
     {
-      id: "backend",
-      title: "Backend & Databases",
-      icon: Database,
-      color: "#00f0ff",
-      skills: ["Node.js", "Firebase", "REST API", "Express", "SQLite", "MongoDB", "MySQL"],
-    },
-    {
-      id: "soft",
-      title: "Collaboration & Soft Skills",
+      id: "collaboration",
+      title: "Collaboration & Tools",
       icon: Users,
       color: "#ff007f",
-      skills: ["Git & GitHub", "Jira & Trello", "Problem Solving", "Team Collaboration", "Creativity"],
+      skills: ["Git & GitHub", "Jira & Trello", "Version Control", "Team Collaboration", "Problem Solving"],
     },
   ]
 
@@ -84,11 +84,11 @@ export default function Skills() {
         >
           <div className="flex items-center gap-2 text-xs font-mono text-[#ff007f] uppercase tracking-widest mb-2">
             <Cpu size={14} />
-            <span>SYS.MATRIX // TECHNICAL_CAPABILITIES</span>
+            <span>SYS.MATRIX // GAME_DESIGNER_SKILLS</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            TECH <span className="neon-text-cyan">MATRIX</span>
-            <span className="text-[#ff007f] text-2xl ml-3 font-mono">/ スキルマトリックス</span>
+            DESIGN <span className="neon-text-cyan">MATRIX</span>
+            <span className="text-[#ff007f] text-2xl ml-3 font-mono">/ デザインスキル</span>
           </h2>
         </motion.div>
 
@@ -101,16 +101,16 @@ export default function Skills() {
         >
           {[
             { id: "all", label: "ALL MATRIX" },
+            { id: "design", label: "LEVEL & GAME DESIGN" },
             { id: "engines", label: "GAME ENGINES" },
-            { id: "languages", label: "LANGUAGES" },
-            { id: "art", label: "3D ART" },
-            { id: "gamedesign", label: "GAME SYSTEMS" },
-            { id: "web", label: "WEB TECH" },
+            { id: "art", label: "3D & WORLD BUILDING" },
+            { id: "scripting", label: "SCRIPTING & LOGIC" },
+            { id: "systems", label: "UX & SYSTEMS" },
           ].map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`px-4 py-2 rounded-md transition-all duration-300 ${
+              className={`px-4 py-2 rounded-md transition-all duration-300 cursor-pointer ${
                 activeTab === tab.id
                   ? "bg-[#00f0ff] text-black font-bold shadow-[0_0_15px_rgba(0,240,255,0.5)]"
                   : "hud-box text-gray-300 hover:text-[#00f0ff]"

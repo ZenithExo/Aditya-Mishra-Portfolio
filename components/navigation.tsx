@@ -46,10 +46,10 @@ export default function Navigation({
             </div>
             <div className="flex flex-col">
               <span className="font-mono font-bold text-sm tracking-widest text-white group-hover:text-[#00f0ff] transition-colors">
-                ADITYA<span className="text-[#ff007f]">.DEV</span>
+                ADITYA<span className="text-[#ff007f]">.DESIGN</span>
               </span>
               <span className="text-[10px] font-mono text-gray-400 group-hover:text-gray-200">
-                アディティヤ // GAME_DEV
+                ゲームデザイナー // GAME_DESIGNER
               </span>
             </div>
           </a>

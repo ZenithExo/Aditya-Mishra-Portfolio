@@ -1,16 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-
 export const metadata: Metadata = {
-  title: "Aditya Kumar Mishra - Game Developer",
+  title: "Aditya Kumar Mishra - Game Designer",
   description:
-    "Portfolio of Aditya Kumar Mishra, a passionate game developer specializing in Unity, Unreal Engine, and modern game engines.",
+    "Portfolio of Aditya Kumar Mishra, a passionate game designer specializing in level design, gameplay mechanics, Unreal Engine 5, and Unity.",
   generator: "v0.app",
 }
 
