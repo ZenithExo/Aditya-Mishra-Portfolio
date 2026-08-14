@@ -1,7 +1,7 @@
 {
   "framework": "nextjs",
   "buildCommand": "next build",
-  "outputDirectory": ".next",
+  "installCommand": "npm install --legacy-peer-deps",
   "env": {
     "NEXT_TELEMETRY_DISABLED": "1",
     "BROWSERSLIST_IGNORE_OLD_DATA": "true"
