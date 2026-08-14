@@ -190,7 +190,7 @@ export default function Hero({ setActiveSection }: HeroProps) {
           </div>
           <div className="hud-box p-4 rounded-lg">
             <div className="text-xl sm:text-2xl font-bold text-[#9d4edd]">BCA GRADUATE</div>
-            <div className="text-[11px] text-gray-400">CGPA 7.12 // LPU</div>
+            <div className="text-[11px] text-gray-400">CGPA 6.97 // LPU</div>
           </div>
           <div className="hud-box p-4 rounded-lg">
             <div className="text-xl sm:text-2xl font-bold text-[#ffe600]">2+ DESIGN TITLES</div>

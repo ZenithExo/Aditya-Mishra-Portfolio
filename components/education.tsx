@@ -12,7 +12,7 @@ export default function Education() {
       degree: "Bachelor of Computer Application (BCA)",
       school: "Lovely Professional University (LPU)",
       year: "2022 - 2025",
-      details: "CGPA – 7.12",
+      details: "CGPA – 6.97",
       badge: "UNDERGRADUATE DEGREE",
       color: "#00f0ff",
     },
